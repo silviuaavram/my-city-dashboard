@@ -1,4 +1,4 @@
-import { api_key } from '../config/config.json'
+import { api_key } from '../../config/config.json'
 
 export class Client {
 	constructor() {

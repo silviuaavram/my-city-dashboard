@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Header } from './header';
 import { Footer } from './footer';
-import { Client } from './google-client/googleClient';
+import GoogleApiWrapper from './map';
 
 const styles = {
   container: {
@@ -18,11 +18,12 @@ const styles = {
 
 export class Main extends Component {
   render() {
-  const c = new Client();
-  return (
+    return (
       <div style={styles.container}>
         <Header />
-        <main style={styles.main} />
+        <main style={styles.main}>
+          <GoogleApiWrapper />
+        </main>
         <Footer />
       </div>
     );
