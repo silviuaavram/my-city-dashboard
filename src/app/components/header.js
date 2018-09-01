@@ -1,21 +1,18 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 const styles = {
   header: {
     display: 'flex',
     alignItems: 'center',
-    backgroundColor: '#1f1f1f'
+    backgroundColor: '#1f1f1f',
+    height: '4.5rem'
   },
   title: {
     flex: 1,
-    fontSize: '1.5rem',
-    margin: '1rem'
-  },
-  date: {
-    flex: 1,
-    textAlign: 'right',
-    margin: '1rem',
-    color: 'white'
+    fontSize: '3rem',
+    padding: '.5rem',
+    textAlign: 'center',
+    margin: '0'
   }
 };
 
@@ -25,11 +22,8 @@ export class Header extends Component {
       <header style={styles.header}>
         <p style={styles.title}>
           <a href="https://github.com/FountainJS/generator-fountain-webapp" target="_blank" rel="noopener noreferrer">
-            Fountain Generator
+            My City Dashboard
           </a>
-        </p>
-        <p style={styles.date}>
-          Generated with FountainJS v1.0.0 on Sat Aug 25 2018 17:28:15 GMT+0200 (CEST)
         </p>
       </header>
     );

@@ -1,31 +1,35 @@
 import React, { Component } from 'react';
-import { Header } from './header';
-import { Footer } from './footer';
-import GoogleApiWrapper from './map';
-
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    minHeight: '100%'
-  },
-  main: {
-    flex: 1,
-    display: 'flex',
-    flexDirection: 'column'
-  }
-};
+import { Places } from './places';
+import { Form } from './form';
+import Map from './map';
+import './main.scss'
 
 export class Main extends Component {
-  render() {
-    return (
-      <div style={styles.container}>
-        <Header />
-        <main style={styles.main}>
-          <GoogleApiWrapper />
-        </main>
-        <Footer />
-      </div>
-    );
-  }
+	constructor(props) {
+		super(props)
+
+		this.state = { places: [] }
+	}
+
+	setPlaces(newPlaces) {
+		this.setState({ places: newPlaces });
+	}
+
+	searchPlaces(searchParams) {
+		// search places
+		const newPlaces = []
+		this.setPlaces(newPlaces)
+	}
+
+	render() {
+		return (
+			<main>
+				<div id="map">
+					<Map places={this.state.places} />
+				</div>
+				<Form searchPlaces={this.searchPlaces} />
+				<Places places={this.state.places} />
+			</main>
+		);
+	}
 }
