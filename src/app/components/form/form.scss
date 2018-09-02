@@ -1,0 +1,34 @@
+#form {
+	line-height: 1.15;
+	background-color: lavender;
+	padding: .4rem;
+
+	.form-field {
+		display: flex;
+		height: 3.2rem;
+		align-items: center;
+		margin: .2rem 0;
+
+		label {
+			font-size: 2rem;
+			flex-basis: 120px;
+		}
+
+		input[type="text"], select {
+			margin-left: 1rem;
+			flex-grow: 1;
+			max-width: 200px;
+			font-size: 2rem;
+		}
+
+		input[type="checkbox"] {
+			height: 2.8rem;
+			width: 2.8rem;
+			margin: .4rem .4rem .4rem 1.4rem;
+		}
+	}
+
+	input {
+		width: auto;
+	}
+}

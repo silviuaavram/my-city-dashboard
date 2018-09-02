@@ -1,5 +1,37 @@
 {
 	"api_key": "AIzaSyBHx4Zy8PZPw0lOxz2IxLvrDHasB_Ax8_M",
+	"languages": [
+		{
+			"value": "en",
+			"label": "English"
+		},
+		{
+			"value": "fr",
+			"label": "French"
+		},
+		{
+			"value": "es",
+			"label": "Spanish"
+		}
+	],
+	"place_types": [
+		{
+			"value": "restaurant",
+			"label": "Restaurant"
+		},
+		{
+			"value": "cafe",
+			"label": "Cafe"
+		},
+		{
+			"value": "atm",
+			"label": "ATM"
+		},
+		{
+			"value": "bar",
+			"label": "Bar"
+		}
+	],
 	"initial_points": {
 		"html_attributions": [],
 		"next_page_token": "CqQCFAEAAACQmc6389dTbXnjDyughGDV7so5nmHMCBPXGaCoYGQ_jk-Kx2fQ2rEM6GrK0NWieez3YRx92Q6zYxtS4ZaxHnDLDNffCEhHeHEXn1cMFJGlI_zdUFbwDtZ2xTdZYn00Yn4dNK5_1zBqEjxv8SwKGdbl9g7xgKZKY-qp3q1NjYGy7GNt-UphLAI05QmT6pN0fq2JSTNmC1oLUQxwaXlf8J9mTKspKyB1mtVU7N3TBwsv7WnUr23htawOVw-QKUanCdZm9sq_5cGPpL_KLQfM66eHWrKRYEjejs0olkoi0yIwCchoIHT_P9IC_TZmDPCP6Q-Cs0A2KnfLnoQvFfQRVf43fjgnsjSfzwR4QluMv1MnMiwLGBpFBPgckJm3o4_0JRIQmQAqA-V2gH2YtR9iWdo_QBoUhTKSrsoUgJBKptmJJOy2g233PVI",

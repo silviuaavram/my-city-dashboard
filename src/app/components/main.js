@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Places } from './places';
-import { Form } from './form';
+import { Form } from './form/form';
 import Map from './map';
 import './main.scss'
 
@@ -15,7 +15,8 @@ export class Main extends Component {
 		this.setState({ places: newPlaces });
 	}
 
-	searchPlaces(searchParams) {
+	sendQuery(searchParams) {
+		console.log(searchParams)
 		// search places
 		const newPlaces = []
 		this.setPlaces(newPlaces)
@@ -27,7 +28,7 @@ export class Main extends Component {
 				<div id="map">
 					<Map places={this.state.places} />
 				</div>
-				<Form searchPlaces={this.searchPlaces} />
+				<Form sendQuery={searchParams => this.sendQuery(searchParams)} />
 				<Places places={this.state.places} />
 			</main>
 		);
