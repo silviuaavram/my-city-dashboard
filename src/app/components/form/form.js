@@ -9,7 +9,7 @@ export class Form extends Component {
 		this.state = {
 			keyword: '',
 			language: languages[0].value,
-			opennow: false,
+			opennow: true,
 			type: place_types[0].value,
 		};
 

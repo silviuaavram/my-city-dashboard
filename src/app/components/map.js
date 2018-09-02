@@ -12,14 +12,12 @@ const styles = {
 class MapContainer extends React.Component {
   render() {
     return (
-      <Map google={this.props.google} zoom={14} containerStyle={styles}>
-        <Marker onClick={this.onMarkerClick}
-          name={'Current location'} />
-        <InfoWindow onClose={this.onInfoWindowClose}>
-          <div>
-            {/* <h1>{this.state.selectedPlace.name}</h1> */}
-          </div>
-        </InfoWindow>
+      <Map
+        google={this.props.google}
+        zoom={16}
+        containerStyle={styles}
+        initialCenter={this.props.initialCenter}
+        center={this.props.center}>
       </Map>
     );
   }
