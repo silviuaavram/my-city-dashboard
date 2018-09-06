@@ -7,24 +7,31 @@ import Client from '../services/google-client/googleClient'
 
 export class Main extends Component {
 	constructor(props) {
-		super(props)
+		super(props);
 
 		this.state = {
 			places: [],
-			center: {}
-		}
+			center: undefined,
+			nextPageToken: undefined
+		};
+
+		this.initialCenter = {
+			lat: 50.0480923,
+			lng: 14.457385599999997
+		};
 	}
 
 	sendQuery(searchParams) {
 		Client.getPlaces({
-			location: this.state.center,
+			location: this.state.center || this.initialCenter,
 			radius: 1000,
 			keyword: searchParams.keyword,
 			language: searchParams.language,
 			opennow: searchParams.opennow,
 			type: searchParams.type
-		}).then(newPlaces => {
-			this.setState({ places: newPlaces });
+		}).then(result => {
+			console.log(result);
+			this.setState({ places: result.results, nextPageToken: result.next_page_token });
 		});
 
 	}
@@ -41,15 +48,10 @@ export class Main extends Component {
 	}
 
 	render() {
-		const initialCenter = {
-			lat: 50.0480923,
-			lng: 14.457385599999997
-		}
-
 		return (
 			<main>
 				<div id="map">
-					<Map places={this.state.places} center={this.state.center} initialCenter={initialCenter} />
+					<Map places={this.state.places} center={this.state.center} initialCenter={this.initialCenter} />
 				</div>
 				<Form sendQuery={searchParams => this.sendQuery(searchParams)} />
 				<Places places={this.state.places} />
