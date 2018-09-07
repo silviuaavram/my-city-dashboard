@@ -6,6 +6,8 @@
 2. `npm install`
 3. Replace `api_key` in config.json with your own.
 4. Have Chrome Extension `Allow-Control-Allow-Origin: *` installed and add an exception rule similar to `https://maps.googleapis.com/*`. This will allow requests from localhost to be made to google without CORS issue.
+5. `gulp serve`
+6. Navigate to the localhost link, for instance `http://localhost:3000`
 
 ## How to use:
 
