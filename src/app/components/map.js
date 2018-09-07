@@ -13,9 +13,8 @@ class MapContainer extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      activeIndex: -1
-    };
+    this.onMapClick = this.onMapClick.bind(this);
+    this.onMarkerClick = this.onMarkerClick.bind(this);
   }
 
   createMarker(place, index) {
@@ -24,9 +23,7 @@ class MapContainer extends React.Component {
         key={place.id}
         name={place.name}
         position={place.geometry.location}
-        onClick={() => {
-          this.setState({ activeIndex: index });
-        }}
+        onClick={evt => this.onMarkerClick(index)}
         icon={{
           url: place.icon,
           scaledSize: new google.maps.Size(24, 24)
@@ -40,19 +37,20 @@ class MapContainer extends React.Component {
       <InfoWindow
         key={place.id}
         position={place.geometry.location}
-        visible={this.state.activeIndex == index}>
+        visible={this.props.activeIndex == index}>
         <div>
-          <h1>{place.name}</h1>
+          <h4>{place.name}</h4>
         </div>
       </InfoWindow>
     );
   }
 
-  createMapPlace(place, index) {
-    const Marker = this.createMarker(place, index);
-    const Window = this.createInfoWindow(place, index);
+  onMapClick() {
+    this.props.onActiveIndexChanged(-1);
+  }
 
-    return { Marker, Window };
+  onMarkerClick(index) {
+    this.props.onActiveIndexChanged(index);
   }
 
   render() {
@@ -62,9 +60,7 @@ class MapContainer extends React.Component {
         zoom={16}
         containerStyle={styles}
         initialCenter={this.props.initialCenter}
-        onClick={() => {
-          this.setState({ activeIndex: -1 });
-        }}
+        onClick={this.onMapClick}
         center={this.props.center}>
         {this.props.places.map((place, index) => this.createMarker(place, index))}
         {this.props.places.map((place, index) => this.createInfoWindow(place, index))}

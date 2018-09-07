@@ -6,13 +6,13 @@ export default class Client {
     url.searchParams.append('key', api_key);
 
     return fetch(url, { method: 'POST' })
-    .then(response => response.json())
-    .catch(error => {
-      console.error(`[Client] getLocation() ${error}`)
-    });
+      .then(response => response.json())
+      .catch(error => {
+        console.error(`[Client] getLocation() ${error}`)
+      });
   }
 
-  static getPlaces({ location, radius = 2000, ...rest } = {}) {
+  static getPlaces({ location, radius = 400, ...rest } = {}) {
     const url = new URL('https://maps.googleapis.com/maps/api/place/nearbysearch/json');
     const promise = location ? new Promise(resolve => resolve(location)) : this.getLocation().then(location => location.location);
     url.searchParams.append('key', api_key);
@@ -23,14 +23,14 @@ export default class Client {
     });
 
     return promise
-    .then(location => {
-      url.searchParams.append('location', `${location.lat},${location.lng}`);
+      .then(location => {
+        url.searchParams.append('location', `${location.lat},${location.lng}`);
 
-      return fetch(url, { method: 'POST'});
-    })
-    .then(response => response.json())
-    .catch(error => {
-      console.error(`[Client] getPlaces() ${error}`)
-    });
+        return fetch(url, { method: 'POST' });
+      })
+      .then(response => response.json())
+      .catch(error => {
+        console.error(`[Client] getPlaces() ${error}`)
+      });
   }
 }

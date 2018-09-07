@@ -11,7 +11,7 @@
 
 		label {
 			font-size: 2rem;
-			flex-basis: 120px;
+			flex-basis: 100px;
 		}
 
 		input[type="text"], select {
@@ -20,6 +20,7 @@
 			max-width: 200px;
 			font-size: 2rem;
 			border: 0;
+			padding: 0;
 		}
 
 		input[type="checkbox"] {
