@@ -1,7 +1,10 @@
+@import '../utils/vars';
+
 #form {
 	line-height: 1.15;
 	background-color: lavender;
 	padding: .4rem;
+	height: $form-height;
 
 	.form-field {
 		display: flex;

@@ -1,0 +1,34 @@
+#places {
+  display: flex;
+  flex-wrap: wrap;
+
+  .place-container {
+    width: 100%;
+
+    @media screen and (min-width: 410px) and (max-width: 619px) {
+      width: calc(50% - 5px);
+      margin-right: 10px;
+
+      &:nth-of-type(2n) {
+        margin-right: 0px;
+      }
+    }
+
+    @media screen and (min-width: 620px) {
+      width: calc(33.33% - 6.66px);
+      margin-right: 10px;
+
+      &:nth-of-type(3n) {
+        margin-right: 0px;
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    max-width: 400px;
+    max-height: 267px;
+    margin: auto;
+  }
+}

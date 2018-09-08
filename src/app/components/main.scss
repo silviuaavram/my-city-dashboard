@@ -1,3 +1,14 @@
+@import './utils/vars';
+
 main {
 	height: calc(100% - 8rem);
+
+	#map {
+		height: $map-height-small;
+	}
+
+	#places {
+		height: $places-height-small;
+		overflow-y: auto;
+	}
 }

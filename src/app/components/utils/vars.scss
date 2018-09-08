@@ -1,0 +1,7 @@
+$form-height: 138px;
+$footer-height: 25px;
+$header-height: 45px;
+$map-height-small: calc((100% - #{$form-height}) / 2);
+$places-height-small: $map-height-small;
+
+// $map-height-small: calc(100% - #{$header-height} - #{$footer-height} - #{$form-height});

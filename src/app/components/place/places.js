@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { getPlacePhotoUrl } from './utils';
+import { getPlacePhotoUrl } from '../utils/utils';
+import './places.scss'
 
 export class Places extends Component {
 	constructor(props) {
@@ -10,7 +11,7 @@ export class Places extends Component {
 		return (
 			<div key={place.id} className='place-container'>
 				<div className='image-container'>
-					<img src={getPlacePhotoUrl(place.photos[0].photo_reference, 320)} />
+					<img src={getPlacePhotoUrl(place.photos[0].photo_reference, 400, 267)} />
 				</div>
 				<div className='data-container'>
 					<span>{place.name}</span>

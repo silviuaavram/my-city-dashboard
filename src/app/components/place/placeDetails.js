@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Client from '../../services/google-client/googleClient'
-import { getPlacePhotoUrl } from './utils';
+import { getPlacePhotoUrl } from '../utils/utils';
 
 export class PlaceDetails extends Component {
   constructor(props) {
