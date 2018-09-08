@@ -1,6 +1,6 @@
 import React from 'react'
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
-import { api_key } from '../config/config.json'
+import { api_key } from '../../config/config.json'
 import './map.scss'
 
 const styles = {

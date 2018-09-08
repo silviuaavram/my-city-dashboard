@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Places } from './places';
+import { Places } from './place/places';
 import { Form } from './form/form';
-import Map from './map';
+import Map from './map/map';
 import './main.scss'
 import Client from '../services/google-client/googleClient'
-import initial_points from '../config/config.json'
+import { PlaceDetails } from './place/placeDetails';
 
 export class Main extends Component {
 	constructor(props) {
@@ -23,10 +23,6 @@ export class Main extends Component {
 		};
 
 		this.onActiveIndexChanged = this.onActiveIndexChanged.bind(this);
-	}
-
-	sendQuery() {
-		this.setState({ places: initial_points.results });
 	}
 
 	sendQuery(searchParams) {
@@ -70,7 +66,7 @@ export class Main extends Component {
 						onActiveIndexChanged={this.onActiveIndexChanged} />
 				</div>
 				<Form sendQuery={searchParams => this.sendQuery(searchParams)} />
-				<Places places={this.state.places} />
+				{this.state.activeIndex === -1 ? <Places places={this.state.places} /> : <PlaceDetails place={this.state.places[this.state.activeIndex]} />}
 			</main>
 		);
 	}
