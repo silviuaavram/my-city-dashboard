@@ -42,7 +42,7 @@ export class PlaceDetails extends Component {
       <div id='place-details'>
         <div id='photos-container'>
           {place.photos.slice(0, Math.min(6, place.photos.length)).map((photo, index) => (
-            <img key={index} src={getPlacePhotoUrl(photo.photo_reference, 320)} />
+            <img key={index} src={getPlacePhotoUrl(photo.photo_reference, 320, 240)} />
           ))}
         </div>
         <div id='details'>

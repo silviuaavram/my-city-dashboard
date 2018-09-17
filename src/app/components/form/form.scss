@@ -4,13 +4,25 @@
 	line-height: 1.15;
 	background-color: lavender;
 	padding: .4rem;
-	height: $form-height;
+	height: $form-height-small;
+	display: flex;
+	flex-wrap: wrap;
+
+	@media screen and (min-width: 620px) {
+		height: $form-height-medium;
+	}
 
 	.form-field {
 		display: flex;
 		height: 3.2rem;
 		align-items: center;
-		margin: .2rem 0;
+		margin: .2rem auto;
+		width: 100%;
+		max-width: 41rem;
+
+		@media screen and (min-width: 620px) {
+			width: 50%;
+		}
 
 		label {
 			font-size: 2rem;
@@ -20,7 +32,6 @@
 		input[type="text"], select {
 			margin-left: 1rem;
 			flex-grow: 1;
-			max-width: 200px;
 			font-size: 2rem;
 			border: 0;
 			padding: 0;
